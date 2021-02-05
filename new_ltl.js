@@ -50,7 +50,9 @@ function evalT(formula, lookup = () => {}) {
     }
     
     case LTLOperator.next: {
-      // indexOf で value を見つけ, その次の値を評価するようにする
+      //
+      // NOTE: indexOf で path の中から value を見つけ, その次の値を評価するようにする
+      //
       return formula.value;
     }
 

@@ -10,7 +10,7 @@ const LTLOperator = {
 //
 // NOTE: evaluate(formula, lookup = () => {}, path) のようにしようと考えている
 // 
-function evaluate(formula, lookup = () => { }) {
+function evaluate(formula, lookup = () => { }, path) {
   // formula: true | false
   if (typeof formula === "boolean") {
     return formula;
@@ -89,3 +89,8 @@ function evaluate(formula, lookup = () => { }) {
     }
   }
 }
+
+module.exports = {
+  LTLOperator: LTLOperator,
+  evaluate: evaluate
+};

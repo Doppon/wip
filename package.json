@@ -1,0 +1,22 @@
+{
+  "name": "wip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "contextjs-test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Doppon/wip.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Doppon/wip/issues"
+  },
+  "homepage": "https://github.com/Doppon/wip#readme",
+  "dependencies": {
+    "contextjs": "^2.0.0"
+  }
+}

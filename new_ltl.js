@@ -58,27 +58,30 @@ function evalT(formula, lookup = () => {}) {
 
     case LTLOperator.always: {
       // 受け取った経路に対して 全てなりたっているかを確認
-      const f = evalT(formula.value, lookup);
-      return typeof f === "boolean"
-           ? !f
-             ? f // false! done!
-             : formula // if f is true, keep evaluating formula
-           : {
-               type: LTLOperator.and,
-               value: [f, formula] // f is a partially evaluated formula
-             };
+
+      // const f = evalT(formula.value, lookup);
+      // return typeof f === "boolean"
+      //      ? !f
+      //        ? f // false! done!
+      //        : formula // if f is true, keep evaluating formula
+      //      : {
+      //          type: LTLOperator.and,
+      //          value: [f, formula] // f is a partially evaluated formula
+      //        };
     }
 
     case LTLOperator.eventually: {
-      const f = evalT(formula.value, lookup);
-      return typeof f === "boolean"
-           ? f
-             ? f // true! done!
-             : formula // if f is false, keep evaluating formula
-           : {
-               type: LTLOperator.or,
-               value: [f, formula] // f is a partially evaluated formula
-             };
+      // 
+
+      // const f = evalT(formula.value, lookup);
+      // return typeof f === "boolean"
+      //      ? f
+      //        ? f // true! done!
+      //        : formula // if f is false, keep evaluating formula
+      //      : {
+      //          type: LTLOperator.or,
+      //          value: [f, formula] // f is a partially evaluated formula
+      //        };
     }
 
     default: {

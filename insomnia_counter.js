@@ -17,20 +17,23 @@ hasInsomnia.refineClass(Patient, {
     alarmClockMode() { return 'Light' }
 })
 
-let trace = [0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1]
+const wake = true
+const sleep = false
+
+let trace = [sleep, sleep, sleep, sleep, wake, wake, wake, wake, wake, sleep, sleep, sleep, sleep, wake]
 let counter = 0
 
 let p = new Patient()
 console.log(p.hasInsomnia())  // False
 console.log(p.alarmClockMode())  // Normal
 
-// traceで3回起床していたらHas insomniaとする
+// traceで2回起床していたらHas insomniaとする
 for (let i = 1; i < trace.length; i++) {
-    if (trace[i - 1] == 0 && trace[i] == 1) {
+    if (trace[i - 1] == sleep && trace[i] == wake) {
         counter += 1
     }
-    if (counter === 3) {
-        console.log("Woke up 3 times. Has insomnia")
+    if (counter === 2) {
+        console.log("Woke up 2 times. Has insomnia")
         break
     }
     if (i === trace.length - 1) {
